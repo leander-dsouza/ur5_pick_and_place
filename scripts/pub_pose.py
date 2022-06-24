@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+import os
+from ament_index_python.packages import get_package_share_directory
 import rclpy
 from rclpy.node import Node
 from builtin_interfaces.msg import Duration
@@ -8,12 +10,17 @@ from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from sensor_msgs.msg import JointState
 
 import ikpy.chain
-ur5e_chain = ikpy.chain.Chain.from_urdf_file("ikpy_files/meshes/ur5e/ur5e.urdf")
+
+
+pkg_dir = get_package_share_directory('ur5_pick_and_place')
+
+
+ur5e_chain = ikpy.chain.Chain.from_urdf_file(os.path.join(pkg_dir, 'urdf', 'ur5e.urdf'))
 
 
 class PublisherJointTrajectory(Node):
     def __init__(self):
-        super().__init__("publisher_position_trajectory_controller")
+        super().__init__("pub_pose_node")
         # Declare all parameters
         # self.declare_parameter("controller_name", "position_trajectory_controller")
         # self.declare_parameter("wait_sec_between_publish", 6)

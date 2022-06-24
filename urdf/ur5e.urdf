@@ -7,7 +7,7 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="visual/base.dae"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/visual/base.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -15,7 +15,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="collision/base.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/collision/base.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <inertial>
@@ -35,7 +35,7 @@
   <link name="shoulder_link">
     <visual>
       <geometry>
-        <mesh filename="visual/shoulder.dae"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/visual/shoulder.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -43,7 +43,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="collision/shoulder.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/collision/shoulder.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <inertial>
@@ -63,7 +63,7 @@
   <link name="upper_arm_link">
     <visual>
       <geometry>
-        <mesh filename="visual/upperarm.dae"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/visual/upperarm.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -71,7 +71,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="collision/upperarm.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/collision/upperarm.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <inertial>
@@ -91,7 +91,7 @@
   <link name="forearm_link">
     <visual>
       <geometry>
-        <mesh filename="visual/forearm.dae"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/visual/forearm.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -99,7 +99,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="collision/forearm.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/collision/forearm.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <inertial>
@@ -119,7 +119,7 @@
   <link name="wrist_1_link">
     <visual>
       <geometry>
-        <mesh filename="visual/wrist1.dae"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/visual/wrist1.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -127,7 +127,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="collision/wrist1.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/collision/wrist1.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <inertial>
@@ -147,7 +147,7 @@
   <link name="wrist_2_link">
     <visual>
       <geometry>
-        <mesh filename="visual/wrist2.dae"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/visual/wrist2.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -155,7 +155,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="collision/wrist2.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/collision/wrist2.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <inertial>
@@ -175,7 +175,7 @@
   <link name="wrist_3_link">
     <visual>
       <geometry>
-        <mesh filename="visual/wrist3.dae"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/visual/wrist3.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -183,7 +183,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="collision/wrist3.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://$(find ur5_pick_and_place)/meshes/collision/wrist3.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <inertial>

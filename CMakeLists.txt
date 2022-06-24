@@ -13,6 +13,9 @@ find_package(ament_cmake REQUIRED)
 
 # .............. Added Block of Code ..................
 
+install(DIRECTORY config meshes launch urdf
+  DESTINATION share/${PROJECT_NAME})
+
 install(PROGRAMS scripts/pub_pose.py
   DESTINATION lib/${PROJECT_NAME})
 
