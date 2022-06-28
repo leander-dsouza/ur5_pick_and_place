@@ -45,7 +45,7 @@ def generate_launch_description():
         Node(
             package="tf2_ros",
             executable="static_transform_publisher",
-            arguments=["3", "0", "0", "0", "0"," 0", "base_link", "camera_color_optical_frame"],
+            arguments=["3", "0", "0", "0", "0"," 0", "base_link", "camera_link"],
             output="screen"
         ),
 
