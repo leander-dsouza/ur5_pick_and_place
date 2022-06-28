@@ -19,12 +19,7 @@ def generate_launch_description():
             output='screen',
         ),
 
-        Node(
-            package="tf2_ros",
-            executable="static_transform_publisher",
-            arguments=["7", "0", "0", "0", "0"," 0", "base_link", "camera_link"],
-            output="screen"
-        ),
+
 
 
     ])

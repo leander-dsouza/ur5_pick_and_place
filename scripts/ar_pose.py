@@ -31,7 +31,7 @@ class ARPose(Node):
         """
         Callback function for the aruco_poses topic.
         """
-        self.get_logger().info(msg)
+        print(msg.poses[0])
 
     def chatter_update(self):
         """

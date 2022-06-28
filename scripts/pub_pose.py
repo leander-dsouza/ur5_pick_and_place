@@ -31,14 +31,20 @@ class PublisherJointTrajectory(Node):
 
         # ...........Saved configuration................
 
-        pos1_pose = [1.0, 0.0, 1.5]
-        pos1_pose_transformed = ur5e_chain.inverse_kinematics(pos1_pose).tolist()[1:7]
+        pose1_position = [1.0, 0.0, 1.5]
+        pose1_orientation = [0.0, 0.0, 0.0]
+        pose1_transformed = ur5e_chain.inverse_kinematics( \
+            pose1_position, pose1_orientation, orientation_mode="X").tolist()[1:7]
 
-        pos2_pose = [0.0, 1.0, 1.5]
-        pos2_pose_transformed = ur5e_chain.inverse_kinematics(pos2_pose).tolist()[1:7]
+        pose2_position = [0.0, 1.0, 1.5]
+        pose2_orientation = [0.0, 0.0, 0.0]
+        pose2_transformed = ur5e_chain.inverse_kinematics( \
+            pose2_position, pose2_orientation, orientation_mode="X").tolist()[1:7]
 
-        pos3_pose = [0.0, 0.0, 1.5]
-        pos3_pose_transformed = ur5e_chain.inverse_kinematics(pos3_pose).tolist()[1:7]
+        pose3_position = [0.0, 0.0, 1.5]
+        pose3_orientation = [0.0, 0.0, 0.0]
+        pose3_transformed = ur5e_chain.inverse_kinematics( \
+            pose3_position, pose3_orientation, orientation_mode="X").tolist()[1:7]
 
         # ................................................
 
@@ -47,12 +53,13 @@ class PublisherJointTrajectory(Node):
         wait_sec_between_publish = 7
         goal_names = ["pos1", "pos2", "pos3"]
         goal_dict = {\
-            "pos1": pos1_pose_transformed, \
-            "pos2": pos2_pose_transformed, \
-            "pos3": pos3_pose_transformed, \
+            "pos1": pose1_transformed, \
+            "pos2": pose2_transformed, \
+            "pos3": pose3_transformed, \
 
         }
-        self.joints = ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
+        self.joints = ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", \
+            "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
         self.check_starting_point = False
         self.starting_point = {}
 

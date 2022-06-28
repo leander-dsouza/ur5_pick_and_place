@@ -42,6 +42,13 @@ def generate_launch_description():
             output='screen',
         ),
 
+        Node(
+            package="tf2_ros",
+            executable="static_transform_publisher",
+            arguments=["3", "0", "0", "0", "0"," 0", "base_link", "camera_color_optical_frame"],
+            output="screen"
+        ),
+
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource( \
                 [rs_pkg_dir, '/launch', '/rs_launch.py']),
