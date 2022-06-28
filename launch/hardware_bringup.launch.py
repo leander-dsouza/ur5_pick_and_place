@@ -52,7 +52,7 @@ def generate_launch_description():
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource( \
-                [ur_pkg_dir, '/launch', '/ur5e_launch.py']),
+                [ur_pkg_dir, '/launch', '/ur5e.launch.py']),
             launch_arguments={
                 'robot_ip': LaunchConfiguration('robot_ip'),
                 }.items(),

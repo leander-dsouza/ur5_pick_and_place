@@ -16,7 +16,7 @@ find_package(ament_cmake REQUIRED)
 install(DIRECTORY config meshes launch urdf
   DESTINATION share/${PROJECT_NAME})
 
-install(PROGRAMS scripts/pub_pose.py
+install(PROGRAMS scripts/pub_pose.py scripts/ar_pose.py
   DESTINATION lib/${PROJECT_NAME})
 
 #......................................................
