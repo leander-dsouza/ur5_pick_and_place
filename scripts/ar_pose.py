@@ -11,6 +11,7 @@ from geometry_msgs.msg import Pose, PoseArray
 from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener
 from tf_utils import do_transform_pose
+from tf_transformations import euler_from_quaternion
 
 class ARPose(Node):
     """
@@ -46,13 +47,22 @@ class ARPose(Node):
         """
         Function to update the chatter update
         """
-        # Transform from two frames
 
         try:
-            transform = self.buffer.lookup_transform('base_link', 'camera_color_optical_frame', Time(nanoseconds=0))
-            print(transform)
+            transform = self.buffer.lookup_transform(\
+                'base_link', 'camera_color_optical_frame', Time(nanoseconds=0))
 
             pose_transformed = do_transform_pose(self.ar_pose, transform)
+
+            target_position = [pose_transformed.position.x, \
+                pose_transformed.position.y, pose_transformed.position.z]
+
+            target_orientation = list(euler_from_quaternion([\
+                pose_transformed.orientation.x, pose_transformed.orientation.y, \
+                    pose_transformed.orientation.z, pose_transformed.orientation.w]))
+
+            print("Target position =", target_position)
+            print("Target orientation =", target_orientation)
 
         except:
             print("Frame not found")
